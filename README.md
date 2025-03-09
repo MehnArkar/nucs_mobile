@@ -21,7 +21,7 @@ Follow these steps to set up the development environment and run the project:
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/your-username/nucs-mobile.git
+   git clone https://github.com/MehnArkar/nucs_mobile.git
    ```
 
 2. Checkout the main branch
