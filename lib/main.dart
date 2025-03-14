@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nucs_mobile/config/routing/app_router.dart';
 import 'package:nucs_mobile/config/themes/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'NUCS',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
-      routerConfig: AppRouter.router(),
+      routerConfig: AppRouter.router,
     );
   }
 }
