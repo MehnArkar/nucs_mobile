@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nucs_mobile/config/routing/app_routes.dart';
-import 'package:nucs_mobile/features/academic/views/pages/academic_page.dart';
+import 'package:nucs_mobile/features/academic/data/models/course.dart';
+import 'package:nucs_mobile/features/academic/data/models/degree_program.dart';
+import 'package:nucs_mobile/features/academic/view/pages/academic_page.dart';
+import 'package:nucs_mobile/features/academic/view/pages/course_details_page.dart';
+import 'package:nucs_mobile/features/academic/view/pages/course_enrollment_page.dart';
+import 'package:nucs_mobile/features/academic/view/pages/degree_program_details_page.dart';
+import 'package:nucs_mobile/features/academic/view/pages/degree_program_enrollment_page.dart';
 import 'package:nucs_mobile/features/blog/views/pages/blog_page.dart';
 import 'package:nucs_mobile/features/club/views/pages/club_page.dart';
 import 'package:nucs_mobile/features/home/view/pages/home_page.dart';
@@ -36,7 +42,12 @@ class AppRouter {
 
   static GoRoute academic = GoRoute(
     path: AppRoutes.academicPath, 
-    builder: (_, __) => AcademicPage());
+    builder: (_, __) => AcademicPage(),
+    routes: [
+      degreeProgramDetailsRoute,
+      courseDetailsRoute
+    ]
+  );
 
   static GoRoute blog = GoRoute(
     path: AppRoutes.blogPath, 
@@ -45,4 +56,34 @@ class AppRouter {
   static GoRoute club = GoRoute(
      path: AppRoutes.clubPath,
      builder: (_, __) => ClubPage());
+
+  static GoRoute degreeProgramDetailsRoute = GoRoute(
+      parentNavigatorKey: parentNavigatorKey,
+      path: AppRoutes.degreeProgramDetailsPath,
+      builder: (_,state)=>DegreeProgramDetailsPage(degreeProgram: state.extra as DegreeProgram),
+      routes: [
+        degreeProgramEnrollmentRoute
+      ]
+  );
+
+  static GoRoute courseDetailsRoute = GoRoute(
+      parentNavigatorKey: parentNavigatorKey,
+      path: AppRoutes.courseDetailsPath,
+      builder: (_,state)=>CourseDetailsPage(course: state.extra as Course),
+      routes: [
+        courseEnrollmentRoute
+      ]
+  );
+
+  static GoRoute degreeProgramEnrollmentRoute = GoRoute(
+      parentNavigatorKey: parentNavigatorKey,
+      path: AppRoutes.degreeProgramEnrollmentPath,
+      builder: (_,state)=>DegreeProgramEnrollmentPage(degreeProgram: state.extra as DegreeProgram)
+  );
+
+  static GoRoute courseEnrollmentRoute = GoRoute(
+      parentNavigatorKey: parentNavigatorKey,
+      path: AppRoutes.courseEnrollmentPath,
+      builder: (_,state)=>CourseEnrollmentPage(course: state.extra as Course)
+  );
 }

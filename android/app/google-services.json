@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "846792734387",
+    "project_id": "nucs-mobile",
+    "storage_bucket": "nucs-mobile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846792734387:android:4675ce3f89cc9b71b662c6",
+        "android_client_info": {
+          "package_name": "com.example.nucs_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5cyHIFygsaEUlEtAX3RMWZ9CjmId-B-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

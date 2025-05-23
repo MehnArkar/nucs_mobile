@@ -16,4 +16,20 @@ class AppRoutes {
   //Club
   static const String clubPath = "/club";
   static const String clubPage = clubPath;
+
+  //Degree program
+  static const String degreeProgramDetailsPath = "degree-program";
+  static const String degreeProgramDetailsPage = "$academicPage/$degreeProgramDetailsPath";
+
+  //Degree program
+  static const String courseDetailsPath = "course";
+  static const String courseDetailsPage = "$academicPage/$courseDetailsPath";
+
+  //Degree program enrollment
+  static const String degreeProgramEnrollmentPath = "degree-program-enrollment";
+  static const String degreeProgramEnrollmentPage = "$degreeProgramDetailsPage/$degreeProgramEnrollmentPath";
+
+  //Course enrollment
+  static const String courseEnrollmentPath = "course-enrollment";
+  static const String courseEnrollmentPage = "$courseDetailsPage/$courseEnrollmentPath";
 }
