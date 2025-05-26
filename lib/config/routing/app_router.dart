@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nucs_mobile/config/routing/app_routes.dart';
+import 'package:nucs_mobile/features/about_us/view/pages/about_us_page.dart';
 import 'package:nucs_mobile/features/academic/data/models/course.dart';
 import 'package:nucs_mobile/features/academic/data/models/degree_program.dart';
 import 'package:nucs_mobile/features/academic/view/pages/academic_page.dart';
@@ -39,7 +40,8 @@ class AppRouter {
                   StatefulShellBranch(routes: [club]),
                 ]
               ),
-            contactusRoute
+            contactusRoute,
+            aboutUsRoute
           ]);
 
   static GoRoute home = GoRoute(
@@ -125,5 +127,11 @@ class AppRouter {
       parentNavigatorKey: parentNavigatorKey,
       path: AppRoutes.contactUsPath,
       builder: (_,state)=>ContactUsPage()
+  );
+
+  static GoRoute aboutUsRoute = GoRoute(
+      parentNavigatorKey: parentNavigatorKey,
+      path: AppRoutes.aboutUsPath,
+      builder: (_,state)=>AboutUsPage()
   );
 }

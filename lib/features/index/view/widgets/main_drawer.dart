@@ -27,7 +27,7 @@ class MainDrawer extends StatelessWidget {
                     label: "About Us",
                     onClick: (){
                       context.pop();
-                      context.push(AppRoutes.contactUsPage);
+                      context.push(AppRoutes.aboutUsPage);
                     }
                 ),
                 DrawerItem(

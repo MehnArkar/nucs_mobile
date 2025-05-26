@@ -48,5 +48,8 @@ class AppRoutes {
   static const String contactUsPath = "/contact-us";
   static const String contactUsPage = contactUsPath;
 
+  static const String aboutUsPath = "/about-us";
+  static const String aboutUsPage = aboutUsPath;
+
 
 }
