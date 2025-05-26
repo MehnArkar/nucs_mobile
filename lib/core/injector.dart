@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:nucs_mobile/features/academic/data/repositories/academic_repository.dart';
 import 'package:nucs_mobile/features/blog/data/repository/blog_repository.dart';
 import 'package:nucs_mobile/features/club/data/repository/club_repository.dart';
+import 'package:nucs_mobile/features/contact_us/data/repository/contact_repository.dart';
 import 'package:nucs_mobile/services/firestore_service.dart';
 
 GetIt injector = GetIt.instance;
@@ -21,5 +22,6 @@ class ServiceLocator {
     injector.registerLazySingleton(()=>AcademicRepository(firestoreService: injector.get()));
     injector.registerLazySingleton(()=>BlogRepository(firestoreService: injector.get()));
     injector.registerLazySingleton(()=>ClubRepository(firestoreService: injector.get()));
+    injector.registerLazySingleton(()=>ContactRepository(firestoreService: injector.get()));
   }
 }

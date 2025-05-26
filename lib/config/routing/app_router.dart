@@ -15,6 +15,7 @@ import 'package:nucs_mobile/features/club/data/models/club.dart';
 import 'package:nucs_mobile/features/club/views/pages/club_details_page.dart';
 import 'package:nucs_mobile/features/club/views/pages/club_enrollment_page.dart';
 import 'package:nucs_mobile/features/club/views/pages/club_page.dart';
+import 'package:nucs_mobile/features/contact_us/view/pages/contact_us_page.dart';
 import 'package:nucs_mobile/features/home/view/pages/home_page.dart';
 import 'package:nucs_mobile/features/index/view/pages/index_page.dart';
 
@@ -37,7 +38,8 @@ class AppRouter {
                   StatefulShellBranch(routes: [blog]),
                   StatefulShellBranch(routes: [club]),
                 ]
-              )
+              ),
+            contactusRoute
           ]);
 
   static GoRoute home = GoRoute(
@@ -117,5 +119,11 @@ class AppRouter {
       parentNavigatorKey: parentNavigatorKey,
       path: AppRoutes.clubEnrollmentPath,
       builder: (_,state)=>ClubEnrollmentPage(club: state.extra as Club)
+  );
+
+  static GoRoute contactusRoute = GoRoute(
+      parentNavigatorKey: parentNavigatorKey,
+      path: AppRoutes.contactUsPath,
+      builder: (_,state)=>ContactUsPage()
   );
 }

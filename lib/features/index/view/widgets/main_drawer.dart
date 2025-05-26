@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nucs_mobile/config/constants/app_constants.dart';
 import 'package:nucs_mobile/config/constants/app_dimension.dart';
+import 'package:nucs_mobile/config/routing/app_routes.dart';
 import 'package:nucs_mobile/utils/extensions/context_extensions.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -20,8 +22,22 @@ class MainDrawer extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               spacing: AppDimension.paddingM,
               children: [
-                DrawerItem(iconName: "about.svg", label: "About Us"),
-                DrawerItem(iconName: "send.svg", label: "Contact Us"),
+                DrawerItem(
+                    iconName: "about.svg",
+                    label: "About Us",
+                    onClick: (){
+                      context.pop();
+                      context.push(AppRoutes.contactUsPage);
+                    }
+                ),
+                DrawerItem(
+                    iconName: "send.svg",
+                    label: "Contact Us",
+                    onClick: (){
+                      context.pop();
+                      context.push(AppRoutes.contactUsPage);
+                    }
+                ),
               ],
             ),
           )
