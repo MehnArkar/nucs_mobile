@@ -14,7 +14,7 @@ class BlogDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Course Details")),
+      appBar: AppBar(title: Text("Blog Details")),
       body: ListView(
         padding: EdgeInsets.all(AppDimension.paddingPage),
         children: [

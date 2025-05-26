@@ -40,4 +40,10 @@ class AppRoutes {
   //Club details
   static const String clubDetailsPath = "club-details";
   static const String clubDetailsPage = "$clubPath/$clubDetailsPath";
+
+  //Club enrollment
+  static const String clubEnrollmentPath = "club-enrollment";
+  static const String clubEnrollmentPage = "$clubPath/$clubEnrollmentPath";
+
+
 }

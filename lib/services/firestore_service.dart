@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:nucs_mobile/features/club/data/models/club_request.dart';
 import 'package:nucs_mobile/utils/failure.dart';
 import '../features/academic/data/models/academic_enrollment_request.dart';
 
@@ -12,6 +13,8 @@ class FirestoreService {
   static const String _degreeEnrollmentCollection = "degree_enrollment";
   static const String _courseEnrollmentCollection = "course_enrollment";
   static const String _blogCollection = "blogs";
+  static const String _clubCollection = "club";
+  static const String _clubEnrollmentCollection = "club_enrollment";
 
   // Generic CRUD operations
   Future<Either<Failure, List<Map<String, dynamic>>>> getCollection(String collection) async {
@@ -60,6 +63,20 @@ class FirestoreService {
 
   Future<Either<Failure, List<Map<String, dynamic>>>> getBlogs() async {
     return getCollection(_blogCollection);
+  }
+
+  Future<Either<Failure,List<Map<String,dynamic>>>> getClubs()async{
+    return getCollection(_clubCollection);
+  }
+
+  Future<Either<Failure,bool>> enrollClub({required ClubEnrollmentRequest enrollment}) async{
+    try {
+      CollectionReference clubEnrollmentCollection = FirebaseFirestore.instance.collection(_clubEnrollmentCollection);
+      await clubEnrollmentCollection.add(enrollment.toJson());
+      return right(true);
+    }catch(e){
+      return left(SystemFailure(e.toString()));
+    }
   }
 
 }
