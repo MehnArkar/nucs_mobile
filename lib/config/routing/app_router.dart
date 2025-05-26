@@ -8,6 +8,8 @@ import 'package:nucs_mobile/features/academic/view/pages/course_details_page.dar
 import 'package:nucs_mobile/features/academic/view/pages/course_enrollment_page.dart';
 import 'package:nucs_mobile/features/academic/view/pages/degree_program_details_page.dart';
 import 'package:nucs_mobile/features/academic/view/pages/degree_program_enrollment_page.dart';
+import 'package:nucs_mobile/features/blog/data/models/blog.dart';
+import 'package:nucs_mobile/features/blog/views/pages/blog_details_page.dart';
 import 'package:nucs_mobile/features/blog/views/pages/blog_page.dart';
 import 'package:nucs_mobile/features/club/views/pages/club_page.dart';
 import 'package:nucs_mobile/features/home/view/pages/home_page.dart';
@@ -51,7 +53,11 @@ class AppRouter {
 
   static GoRoute blog = GoRoute(
     path: AppRoutes.blogPath, 
-    builder: (_, __) => BlogPage());
+    builder: (_, __) => BlogPage(),
+    routes: [
+      blogDetailsRoute
+    ]
+  );
 
   static GoRoute club = GoRoute(
      path: AppRoutes.clubPath,
@@ -85,5 +91,11 @@ class AppRouter {
       parentNavigatorKey: parentNavigatorKey,
       path: AppRoutes.courseEnrollmentPath,
       builder: (_,state)=>CourseEnrollmentPage(course: state.extra as Course)
+  );
+
+  static GoRoute blogDetailsRoute = GoRoute(
+      parentNavigatorKey: parentNavigatorKey,
+      path: AppRoutes.blogDetailsPath,
+      builder: (_,state)=>BlogDetailsPage(blog: state.extra as Blog)
   );
 }

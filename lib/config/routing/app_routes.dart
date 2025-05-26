@@ -32,4 +32,12 @@ class AppRoutes {
   //Course enrollment
   static const String courseEnrollmentPath = "course-enrollment";
   static const String courseEnrollmentPage = "$courseDetailsPage/$courseEnrollmentPath";
+
+  //Blog details
+  static const String blogDetailsPath = "blog-details";
+  static const String blogDetailsPage = "$blogPath/$blogDetailsPath";
+
+  //Club details
+  static const String clubDetailsPath = "club-details";
+  static const String clubDetailsPage = "$clubPath/$clubDetailsPath";
 }

@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:nucs_mobile/utils/failure.dart';
-
 import '../features/academic/data/models/academic_enrollment_request.dart';
 
 class FirestoreService {
@@ -12,6 +11,7 @@ class FirestoreService {
   static const String _courseCollection = "course";
   static const String _degreeEnrollmentCollection = "degree_enrollment";
   static const String _courseEnrollmentCollection = "course_enrollment";
+  static const String _blogCollection = "blogs";
 
   // Generic CRUD operations
   Future<Either<Failure, List<Map<String, dynamic>>>> getCollection(String collection) async {
@@ -56,6 +56,10 @@ class FirestoreService {
       return left(SystemFailure(e.toString()));
     }
 
+  }
+
+  Future<Either<Failure, List<Map<String, dynamic>>>> getBlogs() async {
+    return getCollection(_blogCollection);
   }
 
 }
