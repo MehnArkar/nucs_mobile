@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:nucs_mobile/features/academic/data/repositories/academic_repository.dart';
 import 'package:nucs_mobile/features/blog/data/repository/blog_repository.dart';
@@ -15,7 +16,7 @@ class ServiceLocator {
   }
 
   static Future<void> _injectServices()async{
-    injector.registerLazySingleton(()=>FirestoreService());
+    injector.registerLazySingleton(()=>FirestoreService(firestore: FirebaseFirestore.instance));
   }
 
   static Future<void> _injectRepositories()async{

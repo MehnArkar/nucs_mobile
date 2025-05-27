@@ -6,7 +6,8 @@ import 'package:nucs_mobile/utils/failure.dart';
 import '../features/academic/data/models/academic_enrollment_request.dart';
 
 class FirestoreService {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firestore;
+  FirestoreService({required FirebaseFirestore firestore}) : _firestore = firestore ;
   
   // Collection names as static constants
   static const String _degreeCollection = "degree";
